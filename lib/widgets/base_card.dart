@@ -1,9 +1,10 @@
+import 'package:bmi_calculator_flutte/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class BaseCard extends StatelessWidget {
   const BaseCard({
     Key? key,
-   this.color = const Color(0xFF1D1E33),
+    this.color = AppTheme.activeCardColour,
   }) : super(key: key);
 
   final Color color;

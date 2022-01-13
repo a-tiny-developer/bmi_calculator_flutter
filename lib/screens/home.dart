@@ -1,3 +1,4 @@
+import 'package:bmi_calculator_flutte/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bmi_calculator_flutte/widgets/widgets.dart';
@@ -45,6 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          Container(
+            color: AppTheme.bottomContainerColour,
+            margin: const EdgeInsets.only(top: 10),
+            width: double.infinity,
+            height: 80,
+          )
         ],
       ),
     );
