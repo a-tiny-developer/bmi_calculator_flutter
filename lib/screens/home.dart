@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:bmi_calculator_flutte/widgets/widgets.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -12,11 +14,38 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('BMI CALCULATOR'),
       ),
-      body: const Center(
-        child: Text('Body Text'),
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: const [
+                Expanded(
+                  child: BaseCard(),
+                ),
+                Expanded(
+                  child: BaseCard(),
+                ),
+              ],
+            ),
+          ),
+          const Expanded(
+            child: BaseCard(),
+          ),
+          Expanded(
+            child: Row(
+              children: const [
+                Expanded(
+                  child: BaseCard(),
+                ),
+                Expanded(
+                  child: BaseCard(),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
