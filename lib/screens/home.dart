@@ -13,22 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color maleCardColour = AppTheme.inactiveCardColour;
-  Color femaleCardColour = AppTheme.inactiveCardColour;
-
-  void updateColour(Sex sex) {
-    switch (sex) {
-      case Sex.male:
-        maleCardColour = AppTheme.activeCardColour;
-        femaleCardColour = AppTheme.inactiveCardColour;
-        break;
-      case Sex.female:
-        maleCardColour = AppTheme.inactiveCardColour;
-        femaleCardColour = AppTheme.activeCardColour;
-        break;
-      default:
-    }
-  }
+  Sex? selectedSex;
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColour(Sex.male);
+                        selectedSex = Sex.male;
                       });
                     },
                     child: BaseCard(
-                      color: maleCardColour,
+                      color: selectedSex == Sex.male
+                          ? AppTheme.activeCardColour
+                          : AppTheme.inactiveCardColour,
                       child: const IconContent(
                         iconData: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -61,11 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColour(Sex.female);
+                        selectedSex = Sex.female;
                       });
                     },
                     child: BaseCard(
-                      color: femaleCardColour,
+                      color: selectedSex == Sex.female
+                          ? AppTheme.activeCardColour
+                          : AppTheme.inactiveCardColour,
                       child: const IconContent(
                         iconData: FontAwesomeIcons.venus,
                         label: 'FEMALE',
