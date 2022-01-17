@@ -6,20 +6,25 @@ class BaseCard extends StatelessWidget {
     Key? key,
     this.color = AppTheme.activeCardColour,
     required this.child,
+    this.onTap,
   }) : super(key: key);
 
   final Color color;
   final Widget child;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: color,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: color,
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }
