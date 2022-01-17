@@ -15,6 +15,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   Sex? selectedSex;
 
+  double height = 170;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -62,8 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Expanded(
-            child: BaseCard(
-              child: Container(),
+            child: SliderCard(
+              currentHeight: height,
+              onChanged: (double value) {
+                setState(() {
+                  height = value;
+                });
+              },
             ),
           ),
           Expanded(
