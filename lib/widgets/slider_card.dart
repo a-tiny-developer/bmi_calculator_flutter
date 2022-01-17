@@ -44,8 +44,6 @@ class SliderCard extends StatelessWidget {
             divisions: 100,
             value: currentHeight,
             onChanged: onChanged,
-            activeColor: AppTheme.activeColourSlider,
-            inactiveColor: AppTheme.inactiveColourSlider,
           )
         ],
       ),

@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            color: AppTheme.bottomContainerColour,
+            color: AppTheme.contrastColour,
             margin: const EdgeInsets.only(top: 10),
             width: double.infinity,
             height: 80,
