@@ -1,3 +1,4 @@
+import 'package:bmi_calculator_flutte/widgets/calculate.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -118,12 +119,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Container(
-            color: AppTheme.contrastColour,
-            margin: const EdgeInsets.only(top: 10),
-            width: double.infinity,
-            height: 80,
-          )
+          Calculate(
+            onTap: () {
+              Navigator.pushNamed(context, '/results');
+            },
+          ),
         ],
       ),
     );
