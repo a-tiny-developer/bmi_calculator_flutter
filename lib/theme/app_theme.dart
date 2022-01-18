@@ -5,6 +5,7 @@ class AppTheme {
   static const activeCardColour = Color(0XFF1D1E33);
   static const inactiveCardColour = Color(0XFF111328);
   static const contrastColour = Color(0XFFEB1555);
+  static const buttonColour = Color(0xFF4C4F5E);
   static const contrastTransparencyColour = Color(0X29EB1555);
   static const textColor = Color(0XFF8D8E98);
 

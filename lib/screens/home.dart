@@ -16,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Sex? selectedSex;
 
   double height = 170;
+  int weight = 60;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +81,38 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: BaseCard(
-                    child: Container(),
+                    child: PlusMinusContent(
+                      label: 'WEIGHT',
+                      data: weight,
+                      onPressedMinus: () {
+                        setState(() {
+                          weight--;
+                        });
+                      },
+                      onPressedPlus: () {
+                        setState(() {
+                          weight++;
+                        });
+                      },
+                    ),
                   ),
                 ),
                 Expanded(
                   child: BaseCard(
-                    child: Container(),
+                    child: PlusMinusContent(
+                      label: 'AGE',
+                      data: age,
+                      onPressedMinus: () {
+                        setState(() {
+                          age--;
+                        });
+                      },
+                      onPressedPlus: () {
+                        setState(() {
+                          age++;
+                        });
+                      },
+                    ),
                   ),
                 ),
               ],
