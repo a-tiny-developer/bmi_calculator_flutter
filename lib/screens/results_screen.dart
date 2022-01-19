@@ -1,6 +1,7 @@
 import 'package:bmi_calculator_flutte/widgets/calculate_button.dart';
 import 'package:bmi_calculator_flutte/widgets/result_card.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator_flutte/models/models.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({Key? key}) : super(key: key);
@@ -13,21 +14,23 @@ class ResultsScreen extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            'Your Result',
-            style: Theme.of(context).textTheme.headline1,
+          Center(
+            child: Text(
+              'Your Result',
+              style: Theme.of(context).textTheme.headline1,
+            ),
           ),
-          const Expanded(
+          Expanded(
             child: RestultCard(
-              bmi: 'OVERWEIGHT',
-              score: 25.234,
-              description:
-                  'You have a higher than normal body weight, Try to exercise more.',
+              bmiCategory: BMICaculator.bmiData.category,
+              bmiValue: BMICaculator.bmiValue,
+              bmiDescription: BMICaculator.bmiData.description,
             ),
           ),
           CalculateButton(
-            buttonTitle: 'RE-CALCULATED',
+            buttonTitle: 'RE-CALCULATE',
             onTap: () {
               Navigator.pop(context);
             },

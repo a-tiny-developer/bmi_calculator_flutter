@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 class RestultCard extends StatelessWidget {
   const RestultCard({
     Key? key,
-    required this.bmi,
-    required this.score,
-    required this.description,
+    required this.bmiCategory,
+    required this.bmiValue,
+    required this.bmiDescription,
   }) : super(key: key);
 
-  final String bmi;
-  final double score;
-  final String description;
+  final String bmiCategory;
+  final double bmiValue;
+  final String bmiDescription;
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +22,15 @@ class RestultCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            bmi,
+            bmiCategory,
             style: AppTheme.resultTextStyle,
           ),
           Text(
-            score.toStringAsFixed(2),
+            bmiValue.toStringAsFixed(2),
             style: AppTheme.bmiTextStyle,
           ),
           Text(
-            description,
+            bmiDescription,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1,
           ),

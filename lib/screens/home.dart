@@ -14,12 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Sex? selectedSex;
-
-  double height = 170;
-  int weight = 60;
-  int age = 25;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: BaseCard(
                     onTap: () {
                       setState(() {
-                        selectedSex = Sex.male;
+                        BMICaculator.selectedSex = Sex.male;
                       });
                     },
-                    color: selectedSex == Sex.male
+                    color: BMICaculator.selectedSex == Sex.male
                         ? AppTheme.activeCardColour
                         : AppTheme.inactiveCardColour,
                     child: const IconContent(
@@ -52,10 +46,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: BaseCard(
                     onTap: () {
                       setState(() {
-                        selectedSex = Sex.female;
+                        BMICaculator.selectedSex = Sex.female;
                       });
                     },
-                    color: selectedSex == Sex.female
+                    color: BMICaculator.selectedSex == Sex.female
                         ? AppTheme.activeCardColour
                         : AppTheme.inactiveCardColour,
                     child: const IconContent(
@@ -69,10 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: SliderCard(
-              currentHeight: height,
+              currentHeight: BMICaculator.height,
               onChanged: (double value) {
                 setState(() {
-                  height = value;
+                  BMICaculator.height = value;
                 });
               },
             ),
@@ -84,15 +78,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: BaseCard(
                     child: PlusMinusContent(
                       label: 'WEIGHT',
-                      data: weight,
+                      data: BMICaculator.weight,
                       onPressedMinus: () {
                         setState(() {
-                          weight--;
+                          BMICaculator.weight--;
                         });
                       },
                       onPressedPlus: () {
                         setState(() {
-                          weight++;
+                          BMICaculator.weight++;
                         });
                       },
                     ),
@@ -102,15 +96,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: BaseCard(
                     child: PlusMinusContent(
                       label: 'AGE',
-                      data: age,
+                      data: BMICaculator.age,
                       onPressedMinus: () {
                         setState(() {
-                          age--;
+                          BMICaculator.age--;
                         });
                       },
                       onPressedPlus: () {
                         setState(() {
-                          age++;
+                          BMICaculator.age++;
                         });
                       },
                     ),
