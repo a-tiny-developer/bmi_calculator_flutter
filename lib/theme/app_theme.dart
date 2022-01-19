@@ -9,6 +9,16 @@ class AppTheme {
   static const contrastTransparencyColour = Color(0X29EB1555);
   static const textColor = Color(0XFF8D8E98);
 
+  static const bmiTextStyle = TextStyle(
+    fontSize: 100,
+    fontWeight: FontWeight.bold,
+  );
+  static const resultTextStyle = TextStyle(
+    fontSize: 22,
+    color: Color(0xFF24D876),
+    fontWeight: FontWeight.bold,
+  );
+
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
     primaryColor: primaryColor,
     textTheme: darkTextTheme,
@@ -28,12 +38,20 @@ class AppTheme {
         overlayRadius: 30,
       ),
     ),
+    cardColor: activeCardColour,
   );
 
   static const TextTheme darkTextTheme = TextTheme(
+    bodyText1: TextStyle(
+      fontSize: 22,
+    ),
     headline4: TextStyle(
       fontSize: 18,
       color: textColor,
+    ),
+    headline3: TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.bold,
     ),
     headline1: TextStyle(
       fontSize: 50,
